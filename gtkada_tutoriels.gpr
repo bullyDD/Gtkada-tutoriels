@@ -1,3 +1,5 @@
+with "gtkada.gpr";
+
 project Gtkada_Tutoriels is
 
     for Languages use ("Ada");
@@ -5,9 +7,9 @@ project Gtkada_Tutoriels is
 
     for Exec_Dir use "obj";
     for Object_Dir use "obj";
-    for Source_Dirs use ("src");
+    for Source_Dirs use ("src", "src/tutoriel-01");
 
-    for Main use ("main.adb");
+    for Main use ("main.adb", "tutoriel_01.adb");
     
 
 end Gtkada_Tutoriels;

@@ -1,7 +1,7 @@
 pragma Warnings (Off);
 pragma Ada_95;
-pragma Source_File_Name (ada_main, Spec_File_Name => "b__main.ads");
-pragma Source_File_Name (ada_main, Body_File_Name => "b__main.adb");
+pragma Source_File_Name (ada_main, Spec_File_Name => "b__tutoriel_01.ads");
+pragma Source_File_Name (ada_main, Body_File_Name => "b__tutoriel_01.adb");
 pragma Suppress (Overflow_Check);
 
 package body ada_main is
@@ -155,7 +155,7 @@ package body ada_main is
    end adainit;
 
    procedure Ada_Main_Program;
-   pragma Import (Ada, Ada_Main_Program, "_ada_main");
+   pragma Import (Ada, Ada_Main_Program, "_ada_tutoriel_01");
 
    function main
      (argc : Integer;
@@ -189,7 +189,7 @@ package body ada_main is
    end;
 
 --  BEGIN Object file/option list
-   --   C:\Users\HP\Documents\Ada\Code\GUI\Gtkada-tutoriels\obj\main.o
+   --   C:\Users\HP\Documents\Ada\Code\GUI\Gtkada-tutoriels\obj\tutoriel_01.o
    --   -LC:\Users\HP\Documents\Ada\Code\GUI\Gtkada-tutoriels\obj\
    --   -LC:\Users\HP\Documents\Ada\Code\GUI\Gtkada-tutoriels\obj\
    --   -LC:\GtkAda\lib\gtkada\gtkada.static\gtkada\
