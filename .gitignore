@@ -10,4 +10,4 @@
 *.ali
 
 # Folder 
-./obj
+/obj
