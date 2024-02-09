@@ -34,6 +34,9 @@ begin
     Gtk_New_With_Mnemonic (ExitBtn, "Exit");
     ExitBtn.Set_Relief (Relief_Normal);
 
+    -- Connect event handler to widget
+    Callback.Window_CB.Connect (Main_Window, "delete_event", Callback.On_Window_Quit'Access, False);
+    Callback.Button_CB.Connect (ExitBtn, "clicked", Callback.Quit'Access);
 
     -- Add button to the window
     Main_Window.Add(ExitBtn);

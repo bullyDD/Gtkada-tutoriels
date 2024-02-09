@@ -13,5 +13,10 @@ package Callback is
 
     package Button_CB is new Gtk.Handlers.Callback (Gtk_Widget_Record);
     use Button_CB;
+
+    function On_Window_Quit (Widget : access Gtk_Widget_Record'class)
+        return Boolean;
+
+    procedure Quit (Widget : access Gtk_Widget_Record'class);
     
 end Callback;
