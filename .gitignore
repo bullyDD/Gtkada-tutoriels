@@ -1,5 +1,13 @@
 # Object file
+
 *.o
+*.exe
+*.stderr
+*.stdout
+*.bexch
 
 # Ada Library Information
 *.ali
+
+# Folder 
+./obj
