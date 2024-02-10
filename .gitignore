@@ -5,6 +5,7 @@
 *.stderr
 *.stdout
 *.bexch
+*.code-workspace
 
 # Ada Library Information
 *.ali
