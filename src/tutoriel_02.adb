@@ -18,7 +18,30 @@
 
 with Gtk.Main;
 
+with Window_Pkg;            use Window_Pkg;
+with Button_Pkg;            use Button_Pkg;
+
+with Callback;              use Callback;
+
 procedure Tutoriel_02 is
+
 begin
-    null;
+    --  Initialize Gtkada internal's structure 
+    Gtk.Main.Init;
+
+    declare
+        Main_Window : Window_T;
+        ExitBtn     : Button_T;
+    begin
+
+        -- Connect event handler to widget
+        Callback.Window_CB.Connect(Main_Window.Object, "delete_event", Callback.On_Window_Quit'Access, False);
+        Callback.Button_CB.Connect(ExitBtn.Object, "clicked", Callback.Quit'Access);
+        
+        Main_Window.Add(ExitBtn);
+        Main_Window.Show;
+    end;
+
+    --  Run the main loop until Gtk.Main.Main_Quit is call
+    Gtk.Main.Main;
 end Tutoriel_02;

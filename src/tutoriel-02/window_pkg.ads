@@ -1,4 +1,4 @@
-with Ada.Finalize;          use Ada.Finalize;
+with Ada.Finalization;          use Ada.Finalization;
 with Gtk.Window;            use Gtk.Window;
 
 with Button_Pkg;              use Button_Pkg;
