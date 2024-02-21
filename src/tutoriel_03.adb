@@ -13,7 +13,7 @@ with Gtk.Enums;                 use Gtk.Enums;
 with Object.Form;               use Object.Form;
 with Object.TextField;          use Object.TextField;
 with Object.PasswordField;      use Object.PasswordField;
-
+with Object.ButtonField;        use Object.ButtonField;
 
 procedure Tutoriel_03 is
     Title          : Gtk_Label;
@@ -33,6 +33,7 @@ begin
         Main_Window : Form_T;
         IdInput     : TextField_T;
         Password    : PasswordField_T;
+        LoginBtn    : ButtonField_T;
     begin
 
         -- Add Title to main window
@@ -51,6 +52,10 @@ begin
         -- expand on Y at Row 2 to 3
         Main_Window.Add (Password_Label, 0, 1, 2, 3, Expand, Expand);
         Main_Window.Add (Password, 1, 2, 2, 3, Fill, Expand, 10, 1);
+
+        -- Button is placed at X to col 1 to 2 and
+        -- expand on Y at Row 3 to 4
+        Main_Window.Add (LoginBtn, 1, 2, 3, 4, Fill, Expand, 10, 1);
 
         Main_Window.Show;
     end;

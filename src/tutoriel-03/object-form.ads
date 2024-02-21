@@ -6,11 +6,12 @@ with Gtk.Label;             use Gtk.Label;
 with Gtk.Table;             use Gtk.Table;
 with Gtk.Window;            use Gtk.Window;
 
-
 with Glib;                  use Glib;
 
 with Object.TextField;      use Object.TextField;
 with Object.PasswordField;  use Object.PasswordField;
+with Object.ButtonField;    use Object.ButtonField;
+
 
 pragma Elaborate_All (Gtk);
 
@@ -31,11 +32,20 @@ package Object.Form is
     not overriding
     procedure Add 
         (This                                : in out Form_T;
+        Child                                :        ButtonField_T;
+        XLeft, XRight, TopAlign, BottonAlign :        Guint;
+        XOptions, YOptions                   :        Gtk_Attach_Options;
+        XPadding, YPadding                   :        Guint  := 1);
+    --  Helper method to insert a login button inside a login form window 
+
+    not overriding
+    procedure Add 
+        (This                                : in out Form_T;
         Child                                :        PasswordField_T;
         XLeft, XRight, TopAlign, BottonAlign :        Guint;
         XOptions, YOptions                   :        Gtk_Attach_Options;
         XPadding, YPadding                   :        Guint  := 1);
-    -- Helper to insert a new password input inside a login form window
+    -- Helper method to insert a new password input inside a login form window
     
     not overriding
     procedure Add 

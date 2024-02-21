@@ -35,10 +35,11 @@ package body Object.Form is
     ---------
     procedure Add 
         (This                                : in out Form_T;
-        Child                                :        PasswordField_T;
+        Child                                :        ButtonField_T;
         XLeft, XRight, TopAlign, BottonAlign :        Guint;
         XOptions, YOptions                   :        Gtk_Attach_Options;
-        XPadding, YPadding                   :        Guint  := 1) is
+        XPadding, YPadding                   :        Guint  := 1) 
+    is
     begin
         This.Form_Tab.Attach (Child.Field, 
                             XLeft, XRight,
@@ -47,17 +48,17 @@ package body Object.Form is
                             XPadding, YPadding);
     end Add;
 
-    ----------
+    ---------
     -- Add --
     ---------
     procedure Add 
-        (This                                : in out Form_T; 
-        Child                                :        Gtk_Label;
+        (This                                : in out Form_T;
+        Child                                :        PasswordField_T;
         XLeft, XRight, TopAlign, BottonAlign :        Guint;
         XOptions, YOptions                   :        Gtk_Attach_Options;
-        XPadding, YPadding                   :        Guint := 1) is
+        XPadding, YPadding                   :        Guint  := 1) is
     begin
-        This.Form_Tab.Attach (Child, 
+        This.Form_Tab.Attach (Child.Field, 
                             XLeft, XRight,
                             TopAlign, BottonAlign,
                             XOptions, YOptions,
@@ -75,9 +76,26 @@ package body Object.Form is
         XPadding, YPadding                   :        Guint := 1) 
     is
     begin
-      This.Form_Tab.Attach (Child.Field, XLeft, XRight, 
+        This.Form_Tab.Attach (Child.Field, XLeft, XRight, 
                             TopAlign, BottonAlign, 
                             XOptions, YOptions, 
+                            XPadding, YPadding);
+    end Add;
+
+    ----------
+    -- Add --
+    ---------
+    procedure Add 
+        (This                                : in out Form_T; 
+        Child                                :        Gtk_Label;
+        XLeft, XRight, TopAlign, BottonAlign :        Guint;
+        XOptions, YOptions                   :        Gtk_Attach_Options;
+        XPadding, YPadding                   :        Guint := 1) is
+    begin
+        This.Form_Tab.Attach (Child, 
+                            XLeft, XRight,
+                            TopAlign, BottonAlign,
+                            XOptions, YOptions,
                             XPadding, YPadding);
     end Add;
 
