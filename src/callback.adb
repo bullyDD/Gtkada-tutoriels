@@ -25,5 +25,4 @@ package body Callback is
         Put_Line ("Exit button clicked. " & ASCII.CR & " Window deleted");
         Gtk.Main.Main_Quit;
     end Quit;
-
 end Callback;

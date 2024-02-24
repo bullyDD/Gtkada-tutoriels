@@ -6,7 +6,7 @@ package Object.TextField is
 
     --pragma Preelaborate;
 
-    type TextField_T is new Controlled with record
+    type TextField_T is new Object_T with record
         Field : Gtk_Entry;
     end record;
 

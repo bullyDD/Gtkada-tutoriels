@@ -66,6 +66,10 @@ package Object.Form is
     -- Helper method to insert a label inside a login form window
     
     not overriding
-    procedure show (This : in out Form_T);
+    procedure Show (This : in out Form_T);
+
+    -- List all children of Gtk_Container_Record
+    not overriding
+    procedure Get_Children (This : in out Form_T);
 
 end Object.Form;

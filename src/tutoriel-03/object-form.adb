@@ -1,15 +1,20 @@
+with Ada.Text_IO;               use Ada.Text_IO;
 
-with Glib;                  use Glib;
-with Gtk.Enums;             use Gtk.Enums;
-with Object.TextField;      use Object.TextField;
+with Glib;                      use Glib;
+with Gtk.Widget;                use Gtk.Widget;
+
+with Gtk.Enums;                 use Gtk.Enums;
+with Gtk.Container;             use Gtk.Container;
+with Callback;                  use Callback;
+
 
 package body Object.Form is
     ----------------
     -- Initialize --
     ----------------
     procedure Initialize (This : in out Form_T) is
-        Width  : constant Gint := 400;
-        Height : constant Gint := 300;
+        Width  : constant Gint  := 400;
+        Height : constant Gint  := 300;
         Rows   : constant Guint := 4;
         Cols   : constant Guint := 2;
 
@@ -19,6 +24,10 @@ package body Object.Form is
         This.Container.Set_Title ("Login Form with Gtakada");
         This.Container.Set_Default_Size (Width, Height);
         This.Container.Set_Position (Win_Pos_Center);
+        This.Container.Set_Resizable (False);
+
+        -- Set Component type ID
+        This.id := Formular;
 
         -- Create a Vertical box
         Gtk_New_Vbox (This.Vbox);
@@ -27,6 +36,9 @@ package body Object.Form is
         -- Create table
         Gtk_New (This.Form_Tab, Rows, Cols, False);
         This.Vbox.Pack_Start (This.Form_Tab);
+
+        --  When user click on close button, Callback.On_Window_Quit is trigger to Quit Gtkada Main loop 
+        Callback.Window_CB.Connect (This.Container, "delete_event", Callback.On_Window_Quit'Access, False);
 
     end Initialize;
 
@@ -102,9 +114,33 @@ package body Object.Form is
     ----------
     -- Show --
     ----------
-    procedure show (This : in out Form_T) is
+    procedure Show (This : in out Form_T) is
     begin
         This.Container.Show_All;
     end Show;
+
+    ---------------
+    -- Logged_In --
+    ---------------
+    --  Log current user. Check user credentials and display Welcome message
+    procedure Logged_In (UserId : String; Password : String) is
+    begin
+        Put_Line ("User ID is " & UserId );
+        Put_Line ("Password is " & Password);
+    end Logged_In;
+
+
+    ------------------
+    -- Get_Children --
+    ------------------
+    procedure Get_Children (This : in out Form_T) is
+        Child_List : Gtk.Widget.Widget_List.Glist;
+    begin
+        Child_List := Get_Children (Container => This.Form_Tab);
+        for child of Child_List loop
+            Put_Line ("Tag: " & child.id);
+        end loop;
+    end Get_Children;
+
 
 end Object.Form;
