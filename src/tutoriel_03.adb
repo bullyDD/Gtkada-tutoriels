@@ -1,9 +1,13 @@
---
+--------------------------------------------------------------------------------------
 --  Tutorial 03
---
---  In this third tutorial, we are going to create a very basic
---  login form window using Gtkada.
--- 
+--  Précédemment nous avons utilisé le paquetage Ada.Finalization pour
+--  pour etendre le type étiquété Controlled afin de créer une classe d'objets
+--  dont l'initialisation était automatique.
+--  Nous allons utilisé cette facilité offerte par le type étiquetté Controlled
+--  afin de créer une hierachie d'objets réprésentant les composants du formulaire
+--  de connexion.
+-------------------------------------------------------------------------------------
+
 with Gtk.Main;
 with Gtk.Label;                 use Gtk.Label;
 
