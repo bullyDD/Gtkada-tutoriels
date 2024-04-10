@@ -7,6 +7,7 @@ package body Callback is
     --------------------
     -- On_Window_Quit --
     --------------------
+
     function On_Window_Quit (Widget : access Gtk_Widget_Record'class)
         return Boolean
     is
@@ -19,10 +20,16 @@ package body Callback is
     ----------
     -- Quit --
     ----------
+
     procedure Quit (Widget : access Gtk_Widget_Record'class) is
         use Ada.Text_IO;
     begin
         Put_Line ("Exit button clicked. " & ASCII.CR & " Window deleted");
         Gtk.Main.Main_Quit;
     end Quit;
+
+    ------------------
+    -- Is_Logged_In --
+    ------------------
+
 end Callback;

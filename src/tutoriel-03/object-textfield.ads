@@ -10,6 +10,10 @@ package Object.TextField is
         Field : Gtk_Entry;
     end record;
 
+    overriding
     procedure Initialize (This : in out TextField_T);
+
+    not overriding
+    function  Get_TextValue (This : in out TextField_T) return String;
 
 end Object.TextField;

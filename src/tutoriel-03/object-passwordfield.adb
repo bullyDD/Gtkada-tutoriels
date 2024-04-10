@@ -10,4 +10,10 @@ package body Object.PasswordField is
         This.Field.Set_Invisible_Char (This.Wild_Char);
     end Initialize;
 
+    ------------------
+    -- Get_Password --
+    ------------------
+    function Get_Password (This : in out PasswordField_T) return String is
+        (This.Field.Get_Text);
+
 end Object.PasswordField;

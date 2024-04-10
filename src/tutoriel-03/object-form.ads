@@ -68,8 +68,5 @@ package Object.Form is
     not overriding
     procedure Show (This : in out Form_T);
 
-    -- List all children of Gtk_Container_Record
-    not overriding
-    procedure Get_Children (This : in out Form_T);
-
+    
 end Object.Form;

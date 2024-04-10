@@ -1,12 +1,12 @@
 with Ada.Text_IO;               use Ada.Text_IO;
 
-with Glib;                      use Glib;
 with Gtk.Widget;                use Gtk.Widget;
 
 with Gtk.Enums;                 use Gtk.Enums;
 with Gtk.Container;             use Gtk.Container;
 with Callback;                  use Callback;
 
+with System;                    use System;
 
 package body Object.Form is
     ----------------
@@ -125,22 +125,8 @@ package body Object.Form is
     --  Log current user. Check user credentials and display Welcome message
     procedure Logged_In (UserId : String; Password : String) is
     begin
-        Put_Line ("User ID is " & UserId );
-        Put_Line ("Password is " & Password);
+        Put_Line ("User ID is " & UserId & " | Password is " & Password);
     end Logged_In;
-
-
-    ------------------
-    -- Get_Children --
-    ------------------
-    procedure Get_Children (This : in out Form_T) is
-        Child_List : Gtk.Widget.Widget_List.Glist;
-    begin
-        Child_List := Get_Children (Container => This.Form_Tab);
-        for child of Child_List loop
-            Put_Line ("Tag: " & child.id);
-        end loop;
-    end Get_Children;
 
 
 end Object.Form;

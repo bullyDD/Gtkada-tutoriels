@@ -12,5 +12,8 @@ package Object.PasswordField is
     overriding
     procedure Initialize (This : in out PasswordField_T);
 
+    not overriding
+    function Get_Password (This : in out PasswordField_T) return String;
+
 
 end Object.PasswordField;

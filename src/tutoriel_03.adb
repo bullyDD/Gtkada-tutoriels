@@ -8,6 +8,7 @@ with Gtk.Main;
 with Gtk.Label;                 use Gtk.Label;
 
 with Glib;                      use Glib;
+with Glib.Values;               use Glib.Values;
 with Gtk.Enums;                 use Gtk.Enums;
 
 with Object.Form;               use Object.Form;
@@ -15,10 +16,14 @@ with Object.TextField;          use Object.TextField;
 with Object.PasswordField;      use Object.PasswordField;
 with Object.ButtonField;        use Object.ButtonField;
 
+with Callback;                  use Callback;
+
 procedure Tutoriel_03 is
     Title          : Gtk_Label;
     Input_Label    : Gtk_Label;
     Password_Label : Gtk_Label;
+
+    Args : GValues := Make_Values (2);
 begin
     -- Initialize Gtkada'internal resources
     Gtk.Main.Init;
@@ -56,7 +61,7 @@ begin
         -- Button is placed at X to col 1 to 2 and
         -- expand on Y at Row 3 to 4
         Main_Window.Add (LoginBtn, 1, 2, 3, 4, Fill, Expand, 10, 1);
-
+       
         Main_Window.Show;
     end;
 
