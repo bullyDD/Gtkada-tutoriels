@@ -28,8 +28,22 @@ package body Callback is
         Gtk.Main.Main_Quit;
     end Quit;
 
-    ------------------
-    -- Is_Logged_In --
-    ------------------
+    ---------------
+    -- Say_Hello --
+    ---------------
+
+     procedure Say_Hello (Widget  : access Gtk_Widget_Record'class;
+                            Label : Gtk_Label) is
+        pragma Unreferenced (Widget);
+        Message : String := Label.Get_Label;
+    begin
+        if Message'Length = 0 then
+            Label.Set_Label ("Bonjour tout le Monde!");
+        elsif Message = "Je n'ai rien à dire" then
+            Label.Set_Label ("Bonjour tout le Monde!");
+        else
+            Label.Set_Label ("Je n'ai rien à dire");
+        end if;
+    end Say_Hello;
 
 end Callback;

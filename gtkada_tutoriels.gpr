@@ -7,9 +7,13 @@ project Gtkada_Tutoriels is
 
     for Exec_Dir use ".";
     for Object_Dir use "obj";
-    for Source_Dirs use ("src", "src/tutoriel-02", "src/tutoriel-03", "src/tutoriel-04");
+    for Source_Dirs use ("src", "src/tutoriel-02", 
+                        "src/tutoriel-03", "src/tutoriel-04",  
+                        "src/tutoriel-05");
 
-    for Main use ("main.adb", "tutoriel_01.adb", "tutoriel_02.adb", "tutoriel_03.adb", "tutoriel_04.adb");
+    for Main use ("main.adb", "tutoriel_01.adb", 
+                "tutoriel_02.adb", "tutoriel_03.adb", 
+                "tutoriel_04.adb", "tutoriel_05.adb");
 
     package Compiler is
         for Default_Switches("Ada") use ("-gnatVa", "-gnateV", "-gnatf");

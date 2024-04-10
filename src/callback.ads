@@ -7,6 +7,7 @@ with Glib.Values;           use Glib.Values;
 
 with Gtk.Handlers;
 
+with Gtk.Label;             use Gtk.Label;
 with Gtk.Widget;            use Gtk.Widget;
 
 package Callback is
@@ -21,9 +22,16 @@ package Callback is
                                                             Return_Type => Boolean);
     use Logged_CB;
 
+    package Button_Data_CB is new Gtk.Handlers.User_Callback (Widget_Type => Gtk_Widget_Record, 
+                                                                User_Type => Gtk_Label);
+    use Button_Data_CB;
+
     function On_Window_Quit (Widget : access Gtk_Widget_Record'class)
         return Boolean;
 
     procedure Quit (Widget : access Gtk_Widget_Record'class);
+
+    procedure Say_Hello (Widget : access Gtk_Widget_Record'class;
+                        Label   :Gtk_Label);
 
 end Callback;
