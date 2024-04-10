@@ -1,8 +1,10 @@
---
---  Tutoriel-01 : First GUI composed of a window
---  with an exit button.
---  Exit button is clicked to destroy the Main window.
---
+-----------------------------------------------------------------
+--  Tutoriel-01 : 
+--  Premier tutoriel d'une série su Gtkada.
+--  Nous allons créer notre première fénetre comporant un bouton.
+--  Lorsque le bouton est cliqué un sous programme est appelé pour
+--  fermé la fénetre principale.
+------------------------------------------------------------------
 with Gtk.Main;
 
 with Gtk.Enums;             use Gtk.Enums;
