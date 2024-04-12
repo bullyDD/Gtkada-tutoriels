@@ -32,6 +32,6 @@ package Callback is
     procedure Quit (Widget : access Gtk_Widget_Record'class);
 
     procedure Say_Hello (Widget : access Gtk_Widget_Record'class;
-                        Label   :Gtk_Label);
+                         Label   :Gtk_Label);
 
 end Callback;

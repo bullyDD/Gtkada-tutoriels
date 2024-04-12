@@ -27,16 +27,6 @@ with Callback;              use Callback;
 procedure tutoriel_04 is
     -- Region déclarative
     
-    -- Instantiation d'un paquetage pour gérer les callback
-
-    procedure Quit (Widget : not null access Gtk_Widget_Record'Class);
-    
-    procedure Quit (Widget : not null access Gtk_Widget_Record'Class) is
-        pragma Unreferenced (Widget);
-    begin
-        Gtk.Main.Main_Quit;
-    end Quit;
-    
     -- Declaration d'objets (composant d'une GUI)
     Win     : Gtk_Window;
     Btn     : Gtk_Button;
